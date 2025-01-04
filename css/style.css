@@ -1,0 +1,158 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Stone-100: hsl(30, 54%, 90%);
+  --Stone-150: hsl(30, 18%, 87%);
+  --Stone-600: hsl(30, 10%, 34%);
+  --Stone-900: hsl(24, 5%, 18%);
+  --Brown-800: hsl(14, 45%, 36%);
+  --Rose-800: hsl(332, 51%, 32%);
+  --Rose-50: hsl(330, 100%, 98%);
+  --font-titles: "young-serif", "sans-serif";
+  --font-paragraphs: "outfit-variable", "sans-serif";
+  --default-card-padding: 1.4rem;
+}
+
+@font-face {
+  font-family: "young-serif";
+  src: url("../assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "outfit-variable";
+  src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+/* Layout */
+
+body {
+  font-family: var(--font-paragraphs);
+  font-weight: 300;
+  color: var(--Stone-600);
+  display: grid;
+  grid: 1fr/1fr;
+  place-items: center;
+  padding: 5rem 0rem;
+  background-color: var(--Stone-100);
+}
+
+.wrapper {
+  background-color: var(--White);
+  max-width: 750px;
+  padding: 2rem;
+  border-radius: 1.4rem;
+}
+
+.card-content {
+  padding: 1.6rem 0;
+}
+
+img {
+  max-width: 750px;
+  width: 100%;
+  border-radius: 0.6rem;
+}
+
+@media (max-width: 750px) {
+  body {
+    padding: 0;
+  }
+  .wrapper {
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+  .card-content {
+    padding: 1.6rem var(--default-card-padding);
+  }
+
+  img {
+    border-radius: 0;
+  }
+}
+
+/* Spacing */
+
+ul,
+ol {
+  all: revert;
+  margin: 0 var(--default-card-padding);
+  padding: 0;
+}
+
+.ingredients,
+.instructions {
+  border-bottom: 1px solid var(--Stone-150);
+  padding-bottom: var(--default-card-padding);
+}
+
+.card-content section:not(:last-child),
+.section-title,
+.nutrition-description {
+  margin-bottom: var(--default-card-padding);
+}
+
+li {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling */
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: var(--Stone-900);
+}
+
+h1,
+.section-title.brown {
+  font-family: var(--font-titles);
+}
+
+.preparation {
+  background-color: var(--Rose-50);
+  padding: var(--default-card-padding);
+  border-radius: 0.6rem;
+}
+
+.preparation-title,
+.preparation ul li::marker {
+  color: var(--Rose-800);
+}
+
+.preparation-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.bold-text,
+.instructions-list li::marker {
+  font-weight: 700;
+}
+
+.section-title.brown {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.brown,
+ul li::marker,
+ol li::marker {
+  color: var(--Brown-800);
+}
+
+.nutrition-table {
+  width: 100%;
+}
+
+.nutrition-table td {
+  padding: 0.8rem 1.7rem;
+  text-align: left;
+}
+
+.nutrition-table tr:not(:last-child) {
+  border-bottom: 1px solid var(--Stone-150);
+  padding: 2rem 0;
+}
